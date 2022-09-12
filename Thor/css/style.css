@@ -10,6 +10,10 @@ body {
     padding:70px 0;
 }
 
+.hide {
+    display:none;
+}
+
 .reveal {
   position:relative;
   transform:translateY(150px);
@@ -100,6 +104,20 @@ body {
     transition:background-color 1s;
 }
 
+@keyframes loadIn {
+    from {
+        opacity:0;
+        background-color:gold;
+        width:5%;
+    }
+    
+    to {
+        opacity:1;
+        background-color:#292E37;
+        width:99%;
+    }
+}
+
 @keyframes loadIn1 {
     from {
         opacity:0;
@@ -121,6 +139,19 @@ body {
     to {
         opacity:1;
         transform:translate(0);
+    }
+}
+
+@keyframes loadIn3 {
+    from {
+        opacity:0;
+        transform:translateY(-100%);
+        color:gold;
+    }
+    
+    to {
+        transform:translate(0);
+        opacity:1;
     }
 }
 
@@ -153,6 +184,7 @@ body {
 }
 
 nav {
+    animation: loadIn 1s;
     overflow:hidden;
     background-color:#292E37;
     font-family:sans-serif;
@@ -160,6 +192,12 @@ nav {
     position:fixed; 
     width:99%;
     z-index:100;
+}
+
+nav i {
+    animation:loadIn3 1s;
+    position:relative;
+    top:-2px;
 }
 
 nav a {
@@ -188,7 +226,7 @@ nav a {
 }
 
 nav a:hover, .dropdown:hover .dropbtn {
-    background-color:gold;
+    background-color:#c5b358;
     transition:background-color .5s;
 }
 
